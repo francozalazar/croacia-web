@@ -1,0 +1,10 @@
+# Robots.txt para Croacia Cortinas Metálicas
+User-agent: *
+Allow: /
+
+# Bloquear acceso a archivos o carpetas internas si las hubiera
+Disallow: /admin/
+Disallow: /private/
+
+# Ubicación del Sitemap
+Sitemap: https://croaciacortinas.com.ar/sitemap.xml

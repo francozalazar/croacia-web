@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+
+  <title>Portones Enrollables | Croacia Cortinas</title>
+
+  <meta name="description" content="Portones enrollables domiciliarios e industriales con aluminio inyectado y poliuretano expandido. Apertura rápida desde 8,5 seg/m, máxima estética y seguridad.">
+  <meta name="language" content="Spanish">
+  <meta name="geo.region" content="AR">
+  <link rel="canonical" href="https://croaciacortinas.com.ar/portones.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Portones Enrollables de Poliuretano | Croacia Cortinas Metálicas">
+  <meta property="og:description" content="Alternativa segura y elegante para cerramientos residenciales e industriales.">
+  <meta property="og:url" content="https://croaciacortinas.com.ar/portones.html">
+  <meta property="og:image" content="https://croaciacortinas.com.ar/assets/favicon.png">
+  <meta property="og:site_name" content="Croacia Cortinas Metálicas">
+
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/favicon.png" sizes="32x32" type="image/png">
+
+  <!-- CSS Externos -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+  <!-- CSS Propios -->
+  <link rel="stylesheet" href="portones.css">
+  <link rel="stylesheet" href="cotizador.css">
+  <link rel="stylesheet" href="theme.css">
+</head>
+
+<body>
+
+  <!-- ================= NAV / HEADER FIJO ================= -->
+  <header id="inicio">
+    <nav class="nav-header" id="navHeader">
+      <div class="nav">
+        <div class="logo">
+          <a href="./index.html"><img src="./assets/Croacia_Logo_Negro.png" alt="Croacia Cortinas Metálicas"></a>
+        </div>
+
+        <div class="menu-hamburguesa" id="btnMenu" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="nav-links">
+          <a href="./index.html"><strong>INICIO</strong></a>
+          <a href="./empresa.html"><strong>EMPRESA</strong></a>
+          <a href="./index.html#cortinas"><strong>CORTINAS</strong></a>
+          <a href="./portones.html" class="nav-active"><strong>PORTONES</strong></a>
+          <a href="./trabajos.html"><strong>TRABAJOS</strong></a>
+          <a href="./contacto.html"><strong>CONTACTO</strong></a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- OVERLAY Y MENÚ MOBILE -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <aside class="menu-lateral" id="menuLateral">
+    <nav>
+      <ul>
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="./empresa.html">Empresa</a></li>
+        <li><a href="./index.html#cortinas">Cortinas</a></li>
+        <li><a href="./portones.html">Portones</a></li>
+        <li><a href="./trabajos.html">Trabajos</a></li>
+        <li><a href="./contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- ================= MODAL COTIZADOR ================= -->
+  <div class="cotizador-overlay" id="cotizadorOverlay"></div>
+
+  <div class="cotizador-modal" id="cotizadorModal">
+    <button class="cotizador-close" id="cotizadorClose" aria-label="Cerrar modal">✕</button>
+
+    <h2 class="cotizador-title">
+      COTIZÁ ONLINE<br>
+      <span>EN 3 PASOS</span>
+    </h2>
+
+    <div class="steps-indicator">
+      <div class="step active" data-step="1">
+        <span>1</span>
+        <p>MODELO</p>
+      </div>
+      <div class="line"></div>
+      <div class="step" data-step="2">
+        <span>2</span>
+        <p>CARACTERÍSTICAS</p>
+      </div>
+      <div class="line"></div>
+      <div class="step" data-step="3">
+        <span>3</span>
+        <p>DATOS</p>
+      </div>
+    </div>
+
+    <!-- PASO 1 -->
+    <div id="paso1">
+      <p class="cotizador-label">¿QUÉ MODELO BUSCÁS?</p>
+      <div class="cotizador-radios">
+        <label>
+          <input type="radio" name="modelo" value="cortina" checked>
+          Cortina Metálica
+        </label>
+        <label>
+          <input type="radio" name="modelo" value="porton">
+          Portón Poliuretano
+        </label>
+      </div>
+
+      <p class="cotizador-label">¿QUÉ MEDIDAS? <span>(libre de paso, en metros)</span></p>
+
+      <div id="cortinasContainer">
+        <div class="cortina-item">
+          <p class="cortina-title">Cortina 1</p>
+
+          <div class="medidas">
+            <input type="number" placeholder="Ancho">
+            <input type="number" placeholder="Alto">
+          </div>
+
+          <label class="add-cortina">
+            <input type="checkbox">
+            <span class="texto-agregar">Agregar cortina</span>
+          </label>
+        </div>
+      </div>
+
+      <button id="irPaso2" class="cotizador-next">
+        PASO 2 ❯❯❯
+      </button>
+    </div>
+
+    <!-- PASO 2 -->
+    <div id="paso2" style="display:none;">
+      <h3 class="paso-titulo">CARACTERÍSTICAS</h3>
+
+      <div id="selectorCortina"></div>
+      <div id="contadorConfig" class="contador-config">0/0 configuradas</div>
+
+      <div class="grupo" id="grupoChapa">
+        <p class="grupo-titulo">TIPO DE CHAPA</p>
+        <label><input type="radio" name="chapa" value="Ciega"> Ciega</label>
+        <label><input type="radio" name="chapa" value="Microperforada"> Microperforada</label>
+        <label><input type="radio" name="chapa" value="Americana"> Americana</label>
+      </div>
+
+      <div class="grid-config">
+        <div class="grupo" id="grupoLama" style="display:none;">
+          <p class="grupo-titulo">TIPO DE LAMA</p>
+          <label><input type="radio" name="lama" value="45 mm">45 mm</label>
+          <label><input type="radio" name="lama" value="77 mm">77 mm</label>
+          <label><input type="radio" name="lama" value="95 mm">95 mm</label>
+          <label><input type="radio" name="lama" value="125 mm">125 mm</label>
+        </div>
+
+        <div class="grupo" id="grupoMecanismo">
+          <p class="grupo-titulo">MECANISMO</p>
+          <label id="lblManual">
+            <input type="radio" name="mecanismo" value="Manual"> Manual
+          </label>
+          <label id="lblAutomatizado">
+            <input type="radio" name="mecanismo" value="Automatizado"> Automatizado
+          </label>
+        </div>
+      </div>
+
+      <div id="grupoOpcionales" style="display:none;">
+        <label>
+          ⚠️ Los Portones Poliuretano vienen por KIT COMPLETO que incluye:
+          Motor paralelo o tubular + Central transmisora con 2 controles remotos
+        </label>
+      </div>
+
+      <div class="grupo doble">
+        <div id="colControl">
+          <p>Control Remoto adicional</p>
+          <label><input type="radio" name="control" value="Sí"> Sí</label>
+          <label><input type="radio" name="control" value="No" checked> No</label>
+        </div>
+
+        <div id="colEscape">
+          <p>Puerta de Escape</p>
+          <label><input type="radio" name="escape" value="Sí"> Sí</label>
+          <label><input type="radio" name="escape" value="No" checked> No</label>
+        </div>
+      </div>
+
+      <div class="botones-paso">
+        <button id="volverPaso1" class="btn-atras">ATRÁS</button>
+        <button id="irPaso3" class="btn-siguiente">PASO 3 ❯❯❯</button>
+      </div>
+    </div>
+
+    <!-- PASO 3 -->
+    <div id="paso3" style="display:none;">
+      <h3 class="paso-titulo">COMPLETÁ TUS DATOS</h3>
+
+      <p class="mensaje-respuesta">
+        Al enviar la solicitud, nuestro equipo te responderá a la brevedad por WhatsApp.
+      </p>
+
+      <div class="formulario">
+        <div class="fila">
+          <input type="text" id="nombre" placeholder="Nombre">
+          <input type="tel" id="telefono" placeholder="Teléfono">
+        </div>
+
+        <input type="email" id="email" placeholder="Email">
+        <input type="text" id="zona" placeholder="Zona">
+        <textarea id="aclaracion" placeholder="¿Alguna aclaración?"></textarea>
+      </div>
+
+      <div class="botones-paso">
+        <button id="volverPaso2" class="btn-atras">ATRÁS</button>
+        <button id="cotizarBtn" class="btn-siguiente">COTIZAR ✓</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODELOS DE LAMA (AHORA PRIMERO) ================= -->
+  <section id="seccion-portones" class="features modelos-lamas portones-hero">
+    <div class="lamas-heading">
+      <h1>PORTONES ENROLLABLES</h1>
+      <p>Alternativa segura, elegante y rápida para cerramientos residenciales, comerciales e industriales.</p>
+
+      <div class="hero-features" aria-label="Características principales">
+        <div class="hero-feature">
+          <span class="hero-feature-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+              <circle cx="50" cy="55" r="32" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+              <line x1="22" y1="78" x2="16" y2="84" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+              <line x1="78" y1="78" x2="84" y2="84" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+              <line x1="30" y1="20" x2="24" y2="14" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+              <line x1="70" y1="20" x2="76" y2="14" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+              <path d="M52 34 L42 56 H50 L46 74 L62 48 H54 Z" fill="currentColor" />
+            </svg>
+          </span>
+          <span>Apertura en 8,5 seg</span>
+        </div>
+
+        <div class="hero-feature">
+          <span class="hero-feature-icon" aria-hidden="true">
+            <img src="./assets/seguridad.png" alt="">
+          </span>
+          <span>Ultra resistencia</span>
+        </div>
+
+        <div class="hero-feature">
+          <span class="hero-feature-icon" aria-hidden="true">
+            <img src="./assets/elegancia.png" alt="">
+          </span>
+          <span>Estética elegante</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="features-container lamas-container">
+      <a href="#lama125" class="lama-card lama-card-125" aria-label="Ver detalle de Lama 125">
+        <div class="lama-card-overlay"></div>
+        <div class="lama-card-content">
+          <span class="lama-card-number">125</span>
+          
+          <div class="lama-card-text">
+            <h3>LAMA 125</h3>
+            <p>Línea Hogar</p>
+            <span class="lama-card-link">Ver detalle <strong>→</strong></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#lama95" class="lama-card lama-card-95" aria-label="Ver detalle de Lama 95">
+        <div class="lama-card-overlay"></div>
+        <div class="lama-card-content">
+          <span class="lama-card-number">95</span>
+          
+          <div class="lama-card-text">
+            <h3>LAMA 95</h3>
+            <p>Línea Hogar, comercio e industria</p>
+            <span class="lama-card-link">Ver detalle <strong>→</strong></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#lama77" class="lama-card lama-card-77" aria-label="Ver detalle de Lama 77">
+        <div class="lama-card-overlay"></div>
+        <div class="lama-card-content">
+          <span class="lama-card-number">77</span>
+         
+          <div class="lama-card-text">
+            <h3>LAMA 77</h3>
+            <p>Línea Hogar</p>
+            <span class="lama-card-link">Ver detalle <strong>→</strong></span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= PRODUCTO LAMA 125 ================= -->
+  <section id="lama125" class="producto reveal seccion-lama-nueva">
+    <div class="producto-bg3"></div>
+    
+    <div class="producto-content nueva-disposicion">
+      
+      <!-- CUADRO IZQUIERDO (Información de la Lama) -->
+      <div class="cuadro-informacion">
+        <h2>LAMA 125 - Acero pre-pintado | Línea Hogar</h2>
+        <p>
+          Una versión más robusta, adaptada <br>
+          para resolver cualquier tipo de <br>
+          cerramiento, ofreciendo mayor seguridad.
+        </p>
+
+        <div class="producto-info">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="55" r="32" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+            <line x1="22" y1="78" x2="16" y2="84" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+            <line x1="78" y1="78" x2="84" y2="84" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+            <line x1="30" y1="20" x2="24" y2="14" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+            <line x1="70" y1="20" x2="76" y2="14" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+            <path d="M52 34 L42 56 H50 L46 74 L62 48 H54 Z" fill="currentColor" />
+          </svg>
+          <span>Tiempo de apertura: 8.5 seg. x metro lineal</span>
+        </div>
+
+        <div class="producto-indicadores">
+          <span class="dot active"></span>
+          <span class="dot dot-madera"></span>
+          <span class="dot dot-negro"></span>
+        </div>
+
+        <button class="btn-galeria" data-galeria="lama125">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          Trabajos Realizados
+        </button>
+      </div>
+
+      <!-- CUADRO DERECHO (Video Reel) -->
+      <div class="cuadro-video">
+        <div class="producto-video" data-video="./assets/lama125.mp4" role="button" tabindex="0" aria-label="Ver reel de Lama 125">
+          <video autoplay muted loop playsinline>
+            <source src="./assets/lama125.mp4" type="video/mp4">
+          </video>
+        </div>
+        
+        <button class="btn-galeria btn-reel" data-video="./assets/lama125.mp4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="14" height="14" rx="2"/><path d="m16 10 6-3v10l-6-3z"/></svg>
+          Ver video
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= PRODUCTO LAMA 95 (FOLIADO) ================= -->
+  <section id="lama95" class="producto reveal seccion-lama-nueva">
+    <div class="producto-bg21"></div>
+    <div class="producto-content nueva-disposicion">
+      
+      <div class="cuadro-informacion">
+        <h2>LAMA 95 - Foliado | Línea Comercio e industria</h2>
+        <p>
+          Ideal para cerramientos comerciales<br>
+          industriales, galpones y depósitos.
+        </p>
+
+        <div class="producto-info">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="55" r="32" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+            <line x1="22" y1="78" x2="16" y2="84" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+            <line x1="78" y1="78" x2="84" y2="84" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+            <line x1="30" y1="20" x2="24" y2="14" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+            <line x1="70" y1="20" x2="76" y2="14" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+            <path d="M52 34 L42 56 H50 L46 74 L62 48 H54 Z" fill="currentColor" />
+          </svg>
+          <span>Tiempo de apertura: 12 seg. x metro lineal</span>
+        </div>
+
+        <div class="producto-indicadores">
+          <span class="dot active foliado"></span>
+        </div>
+
+        <button class="btn-galeria" data-galeria="lama95">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          Trabajos Realizados
+        </button>
+      </div>
+
+      <div class="cuadro-video">
+        <div class="producto-video" data-video="./assets/lama1.mp4" role="button" tabindex="0" aria-label="Ver reel de Lama 95">
+          <video autoplay muted loop playsinline>
+            <source src="./assets/lama1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <button class="btn-galeria btn-reel" data-video="./assets/lama1.mp4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="14" height="14" rx="2"/><path d="m16 10 6-3v10l-6-3z"/></svg>
+          Ver Video
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= PRODUCTO LAMA 95 (ACERO PRE-PINTADO) ================= -->
+  <section id="lama95-acero" class="producto reveal seccion-lama-nueva">
+    <div class="producto-bg2"></div>
+    <div class="producto-content nueva-disposicion">
+      
+      <div class="cuadro-informacion">
+        <h2>LAMA 95 - Acero pre-pintado | Línea Hogar.</h2>
+        <p>
+          Ideal para garages y<br>
+          cerramientos de hogares.
+        </p>
+
+        <div class="producto-info">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="55" r="32" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+            <line x1="22" y1="78" x2="16" y2="84" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+            <line x1="78" y1="78" x2="84" y2="84" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+            <line x1="30" y1="20" x2="24" y2="14" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+            <line x1="70" y1="20" x2="76" y2="14" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+            <path d="M52 34 L42 56 H50 L46 74 L62 48 H54 Z" fill="currentColor" />
+          </svg>
+          <span>Tiempo de apertura: 12 seg. x metro lineal</span>
+        </div>
+
+        <div class="producto-indicadores">
+          <span class="dot active"></span>
+          <span class="dot dot-madera"></span>
+          <span class="dot dot-negro"></span>
+        </div>
+
+        <button class="btn-galeria" data-galeria="lama95">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          Trabajos Realizados
+        </button>
+      </div>
+
+      <div class="cuadro-video">
+        <div class="producto-video" data-video="./assets/lama1.mp4" role="button" tabindex="0" aria-label="Ver reel de Lama 95">
+          <video autoplay muted loop playsinline>
+            <source src="./assets/lama1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <button class="btn-galeria btn-reel" data-video="./assets/lama1.mp4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="14" height="14" rx="2"/><path d="m16 10 6-3v10l-6-3z"/></svg>
+          Ver video
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= PRODUCTO LAMA 77 ================= -->
+  <section id="lama77" class="producto reveal seccion-lama-nueva">
+    <div class="producto-bg1"></div>
+    <div class="producto-content nueva-disposicion">
+      
+      <div class="cuadro-informacion">
+        <h2>LAMA 77 - Acero pre-pintado | Línea Hogar</h2>
+        <p>
+          Ideal para Garages y Ventanales <br> Apertura a distancia
+        </p>
+
+        <div class="producto-info">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="55" r="32" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+            <line x1="22" y1="78" x2="16" y2="84" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+            <line x1="78" y1="78" x2="84" y2="84" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+            <line x1="30" y1="20" x2="24" y2="14" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+            <line x1="70" y1="20" x2="76" y2="14" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+            <path d="M52 34 L42 56 H50 L46 74 L62 48 H54 Z" fill="currentColor" />
+          </svg>
+          <span>Tiempo de apertura: 12 seg. x metro lineal</span>
+        </div>
+
+        <div class="producto-indicadores">
+          <span class="dot active"></span>
+          <span class="dot dot-negro"></span>
+          <span class="dot dot-madera"></span>
+        </div>
+
+        <button class="btn-galeria" data-galeria="lama77">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          Trabajos Realizados
+        </button>
+      </div>
+
+      <div class="cuadro-video">
+        <div class="producto-video" data-video="./assets/lama3.mp4" role="button" tabindex="0" aria-label="Ver reel de Lama 77">
+          <video autoplay muted loop playsinline>
+            <source src="./assets/lama3.mp4" type="video/mp4">
+          </video>
+        </div>
+        <button class="btn-galeria btn-reel" data-video="./assets/lama3.mp4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="14" height="14" rx="2"/><path d="m16 10 6-3v10l-6-3z"/></svg>
+          Ver Video
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= WHATSAPP FLOTANTE ================= -->
+  <div class="whatsapp-float" id="waToggle">
+    <img src="./assets/whatsapp.svg" alt="WhatsApp Contacto">
+  </div>
+
+  <div class="whatsapp-panel" id="waPanel">
+    <div class="wa-header">
+      <span>WhatsApp</span>
+      <button id="waClose" aria-label="Cerrar chat">✕</button>
+    </div>
+
+    <div class="wa-body">
+      <div class="wa-message">
+        Hola! Gracias por visitarnos 😊<br>
+        ¿Cómo podemos ayudarte?
+      </div>
+
+      <a href="https://wa.me/5491156594671" target="_blank" rel="noopener" class="wa-open-chat" id="waOpenChat">
+        <svg class="wa-progress" viewBox="0 0 36 36">
+          <circle class="bg" cx="18" cy="18" r="16"></circle>
+          <circle class="fg" cx="18" cy="18" r="16"></circle>
+        </svg>
+        <span class="wa-text">Abrir chat</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <a href="#cotizadorModal" class="btn-cotizador">
+          <img src="./assets/calculadora.svg" alt="Cotizador Icono">
+          Cotizador online
+        </a>
+      </div>
+
+      <div class="footer-center">
+        <div class="footer-sucursal">
+          <span class="footer-social"><img src="./assets/ubicacion-footer.svg" alt="Ubicación Fábrica"></span>
+          <div>
+            <h4>FÁBRICA</h4>
+            <p>
+              Ruta de la Tradición 670<br>
+              esq. Bruzzone, Luis Guillón
+            </p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Croacia+SRL" target="_blank" rel="noopener" class="btn-maps">
+              📍 Cómo llegar
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-sucursal">
+          <span class="footer-social"><img src="./assets/ubicacion-footer.svg" alt="Ubicación La Plata"></span>
+          <div>
+            <h4>SUCURSAL LA PLATA</h4>
+            <p>Av. 44 N° 3269, esq. 160 bis, La Plata</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Av+44+3269+La+Plata" target="_blank" rel="noopener" class="btn-maps">
+              📍 Cómo llegar
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <div class="footer-contacto">
+          <h4>Teléfono</h4>
+          <p>4281-3813</p>
+        </div>
+
+        <div class="footer-contacto">
+          <h4>WhatsApp</h4>
+          <a href="https://wa.me/5491154502050" target="_blank" rel="noopener">
+            <span class="area">Fábrica</span> 11 5450-2050
+          </a>
+          <a href="https://wa.me/5491158184428" target="_blank" rel="noopener">
+            <span class="area">Suc. Lomas de Zamora</span> 11 5818-4428
+          </a>
+          <a href="https://wa.me/2213631000" target="_blank" rel="noopener">
+            <span class="area">Suc. La Plata</span> 221-3631000
+          </a>
+        </div>
+
+        <div class="footer-mail">
+          <span class="footer-social"><img src="./assets/email.svg" alt="Email contacto"></span>
+          <div class="footer-mail-list">
+            <a href="mailto:ruth@croaciacortinas.com.ar">ruth@croaciacortinas.com.ar</a>
+            <a href="mailto:marianna@croaciacortinas.com.ar">marianna@croaciacortinas.com.ar</a>
+            <a href="mailto:milagros@croaciacortinas.com.ar">milagros@croaciacortinas.com.ar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-line"></div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/croaciacortinas" target="_blank" rel="noopener"><img src="./assets/instagram-footer.svg" alt="Instagram"></a>
+        <a href="https://www.youtube.com/@CroaciaCortinasSRL" target="_blank" rel="noopener"><img src="./assets/youtube-footer.svg" alt="YouTube"></a>
+        <a href="https://www.facebook.com/CortinasMetalicasCroacia" target="_blank" rel="noopener"><img src="./assets/facebook-footer.svg" alt="Facebook"></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL GALERÍA Y LIGHTBOX ================= -->
+  <div class="galeria-overlay" id="galeriaOverlay"></div>
+  <div class="galeria-modal" id="galeriaModal">
+    <button class="galeria-close" id="galeriaClose" aria-label="Cerrar galería">✕</button>
+    <h3 class="galeria-titulo" id="galeriaTitulo">Trabajos Realizados</h3>
+    <p class="galeria-subtitulo">Instalaciones de nuestros clientes</p>
+    <div class="galeria-grid" id="galeriaGrid"></div>
+  </div>
+
+  <div class="lightbox-overlay" id="lightboxOverlay">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar imagen">✕</button>
+    <img src="" alt="Imagen ampliada" class="lightbox-img" id="lightboxImg">
+  </div>
+
+  <div class="video-reel-overlay" id="videoReelOverlay">
+    <div class="video-reel-modal" role="dialog" aria-modal="true" aria-label="Reel del producto">
+      <button class="video-reel-close" id="videoReelClose" aria-label="Cerrar reel">✕</button>
+      <video id="videoReelPlayer" controls playsinline></video>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="main.js"></script>
+  <script src="cotizador.js"></script>
+
+</body>
+</html>

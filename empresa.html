@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+
+  <title>Nuestra Empresa | Croacia Cortinas Metálicas</title>
+
+  <meta name="description" content="Más de 25 años de trayectoria en fabricación e instalación de cortinas metálicas y portones. Atención y service de urgencias 24/7.">
+  <meta name="language" content="Spanish">
+  <meta name="geo.region" content="AR">
+  <link rel="canonical" href="https://croaciacortinas.com.ar/empresa.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sobre Nosotros | Croacia Cortinas Metálicas">
+  <meta property="og:description" content="Más de 25 años de experiencia acompañando obras comerciales e industriales con atención 24/7.">
+  <meta property="og:url" content="https://croaciacortinas.com.ar/empresa.html">
+  <meta property="og:image" content="https://croaciacortinas.com.ar/assets/favicon.png">
+  <meta property="og:site_name" content="Croacia Cortinas Metálicas">
+
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/favicon.png" sizes="32x32" type="image/png">
+
+  <!-- CSS Externos -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+  <!-- CSS Propios -->
+  <link rel="stylesheet" href="empresa.css">
+  <link rel="stylesheet" href="cotizador.css">
+  <link rel="stylesheet" href="reels.css">
+  <link rel="stylesheet" href="theme.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER / HERO ================= -->
+  <header class="fondo-header" id="inicio">
+
+    <!-- VIDEO DE FONDO -->
+    <video class="video-bg" autoplay muted loop playsinline>
+      <source src="./assets/croaciavideofondo.mp4" type="video/mp4">
+    </video>
+
+    <!-- NAV -->
+    <nav class="nav-header" id="navHeader">
+      <div class="nav">
+        <div class="logo">
+          <a href="./index.html"><img src="./assets/Croacia_Logo_Negro.png" alt="Croacia Cortinas Metálicas"></a>
+        </div>
+
+        <div class="menu-hamburguesa" id="btnMenu" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="nav-links">
+          <a href="./index.html"><strong>INICIO</strong></a>
+          <a href="./empresa.html" class="nav-active"><strong>EMPRESA</strong></a>
+          <a href="./index.html#cortinas"><strong>CORTINAS</strong></a>
+          <a href="./portones.html"><strong>PORTONES</strong></a>
+          <a href="./trabajos.html"><strong>TRABAJOS</strong></a>
+          <a href="./contacto.html"><strong>CONTACTO</strong></a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO CONTENT -->
+    <div class="hero-content">
+      <h1>
+        Más de <span class="highlight">25 años</span><br>
+        acompañando las obras<br>
+        de nuestros clientes
+      </h1>
+
+      <p>
+        La experiencia, el compromiso, la calidad de los materiales y la garantía nos permiten
+        seguir creciendo.
+      </p>
+    </div>
+
+    <!-- ================= 3 PALABRAS SEPARADAS Y TITILANTES ================= -->
+    <div class="hero-enlaces-separados" aria-label="Navegación rápida">
+      <a href="#seccion-reparacion" class="palabra-titilante">REPARACIÓN</a>
+      <a href="#seccion-urgencia" class="palabra-titilante">URGENCIA</a>
+      <a href="#seccion-fabricacion" class="palabra-titilante">FABRICACIÓN</a>
+    </div>
+
+  </header>
+
+  <!-- OVERLAY Y MENÚ MOBILE -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <aside class="menu-lateral" id="menuLateral">
+    <nav>
+      <ul>
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="./empresa.html">Empresa</a></li>
+        <li><a href="./index.html#cortinas">Cortinas</a></li>
+        <li><a href="./portones.html">Portones</a></li>
+        <li><a href="./trabajos.html">Trabajos</a></li>
+        <li><a href="./contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- ================= MODAL COTIZADOR ================= -->
+  <div class="cotizador-overlay" id="cotizadorOverlay"></div>
+
+  <div class="cotizador-modal" id="cotizadorModal">
+    <button class="cotizador-close" id="cotizadorClose" aria-label="Cerrar modal">✕</button>
+
+    <h2 class="cotizador-title">
+      COTIZÁ ONLINE<br>
+      <span>EN 3 PASOS</span>
+    </h2>
+
+    <div class="steps-indicator">
+      <div class="step active" data-step="1">
+        <span>1</span>
+        <p>MODELO</p>
+      </div>
+      <div class="line"></div>
+      <div class="step" data-step="2">
+        <span>2</span>
+        <p>CARACTERÍSTICAS</p>
+      </div>
+      <div class="line"></div>
+      <div class="step" data-step="3">
+        <span>3</span>
+        <p>DATOS</p>
+      </div>
+    </div>
+
+    <!-- PASO 1 -->
+    <div id="paso1">
+      <p class="cotizador-label">¿QUÉ MODELO BUSCÁS?</p>
+      <div class="cotizador-radios">
+        <label>
+          <input type="radio" name="modelo" value="cortina" checked>
+          Cortina Metálica
+        </label>
+        <label>
+          <input type="radio" name="modelo" value="porton">
+          Portón Poliuretano
+        </label>
+      </div>
+
+      <p class="cotizador-label">¿QUÉ MEDIDAS? <span>(libre de paso, en metros)</span></p>
+
+      <div id="cortinasContainer">
+        <div class="cortina-item">
+          <p class="cortina-title">Cortina 1</p>
+
+          <div class="medidas">
+            <input type="number" placeholder="Ancho">
+            <input type="number" placeholder="Alto">
+          </div>
+
+          <label class="add-cortina">
+            <input type="checkbox">
+            <span class="texto-agregar">Agregar cortina</span>
+          </label>
+        </div>
+      </div>
+
+      <button id="irPaso2" class="cotizador-next">
+        PASO 2 ❯❯❯
+      </button>
+    </div>
+
+    <!-- PASO 2 -->
+    <div id="paso2" style="display:none;">
+      <h3 class="paso-titulo">CARACTERÍSTICAS</h3>
+
+      <div id="selectorCortina"></div>
+      <div id="contadorConfig" class="contador-config">0/0 configuradas</div>
+
+      <div class="grupo" id="grupoChapa">
+        <p class="grupo-titulo">TIPO DE CHAPA</p>
+        <label><input type="radio" name="chapa" value="Ciega"> Ciega</label>
+        <label><input type="radio" name="chapa" value="Microperforada"> Microperforada</label>
+        <label><input type="radio" name="chapa" value="Americana"> Americana</label>
+      </div>
+
+      <div class="grid-config">
+        <div class="grupo" id="grupoLama" style="display:none;">
+          <p class="grupo-titulo">TIPO DE LAMA</p>
+          <label><input type="radio" name="lama" value="45 mm">45 mm</label>
+          <label><input type="radio" name="lama" value="77 mm">77 mm</label>
+          <label><input type="radio" name="lama" value="95 mm">95 mm</label>
+          <label><input type="radio" name="lama" value="125 mm">125 mm</label>
+        </div>
+
+        <div class="grupo" id="grupoMecanismo">
+          <p class="grupo-titulo">MECANISMO</p>
+          <label id="lblManual">
+            <input type="radio" name="mecanismo" value="Manual"> Manual
+          </label>
+          <label id="lblAutomatizado">
+            <input type="radio" name="mecanismo" value="Automatizado"> Automatizado
+          </label>
+        </div>
+      </div>
+
+      <div id="grupoOpcionales" style="display:none;">
+        <label>
+          ⚠️ Los Portones Poliuretano vienen por KIT COMPLETO que incluye:
+          Motor paralelo o tubular + Central transmisora con 2 controles remotos
+        </label>
+      </div>
+
+      <div class="grupo doble">
+        <div id="colControl">
+          <p>Control Remoto adicional</p>
+          <label><input type="radio" name="control" value="Sí"> Sí</label>
+          <label><input type="radio" name="control" value="No" checked> No</label>
+        </div>
+
+        <div id="colEscape">
+          <p>Puerta de Escape</p>
+          <label><input type="radio" name="escape" value="Sí"> Sí</label>
+          <label><input type="radio" name="escape" value="No" checked> No</label>
+        </div>
+      </div>
+
+      <div class="botones-paso">
+        <button id="volverPaso1" class="btn-atras">ATRÁS</button>
+        <button id="irPaso3" class="btn-siguiente">PASO 3 ❯❯❯</button>
+      </div>
+    </div> 
+
+    <!-- PASO 3 -->
+    <div id="paso3" style="display:none;">
+      <h3 class="paso-titulo">COMPLETÁ TUS DATOS</h3>
+
+      <p class="mensaje-respuesta">
+        Al enviar la solicitud, nuestro equipo te responderá a la brevedad por WhatsApp.
+      </p>
+
+      <div class="formulario">
+        <div class="fila">
+          <input type="text" id="nombre" placeholder="Nombre">
+          <input type="tel" id="telefono" placeholder="Teléfono">
+        </div>
+
+        <input type="email" id="email" placeholder="Email">
+        <input type="text" id="zona" placeholder="Zona">
+        <textarea id="aclaracion" placeholder="¿Alguna aclaración?"></textarea>
+      </div>
+
+      <div class="botones-paso">
+        <button id="volverPaso2" class="btn-atras">ATRÁS</button>
+        <button id="cotizarBtn" class="btn-siguiente">COTIZAR ✓</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= ÁREAS DE SERVICIO ================= -->
+  <section id="destacado" class="features lamas-modelos-empresa">
+    <div class="lamas-heading">
+      <span>NUESTROS SERVICIOS</span>
+      <h2>Soluciones para cada necesidad</h2>
+    </div>
+
+    <div class="features-container lamas-container">
+
+      <a href="#seccion-reparacion" class="lama-card service-card">
+        <div class="service-card-top">
+          <span class="service-card-number">01</span>
+          <span class="service-card-line"></span>
+        </div>
+        <div class="lama-card-text">
+          <span class="service-card-label">SERVICIO TÉCNICO</span>
+          <h3>Reparación</h3>
+          <p>Reparamos cortinas ya instaladas y resolvemos inconvenientes mecánicos o estructurales con móviles propios.</p>
+          <span class="lama-card-link">Conocé el servicio <strong>→</strong></span>
+        </div>
+      </a>
+
+      <a href="#seccion-urgencia" class="lama-card service-card">
+        <div class="service-card-top">
+          <span class="service-card-number">02</span>
+          <span class="service-card-line"></span>
+        </div>
+        <div class="lama-card-text">
+          <span class="service-card-label">ATENCIÓN 24/7</span>
+          <h3>Urgencia</h3>
+          <p>Asistencia para apertura y cierre de establecimientos durante las 24 horas, los 365 días del año.</p>
+          <span class="lama-card-link">Conocé el servicio <strong>→</strong></span>
+        </div>
+      </a>
+
+      <a href="#seccion-fabricacion" class="lama-card service-card">
+        <div class="service-card-top">
+          <span class="service-card-number">03</span>
+          <span class="service-card-line"></span>
+        </div>
+        <div class="lama-card-text">
+          <span class="service-card-label">PRODUCCIÓN PROPIA</span>
+          <h3>Fabricación</h3>
+          <p>Fabricamos cortinas a medida con maquinaria propia para lograr respuestas rápidas y una terminación de calidad.</p>
+          <span class="lama-card-link">Conocé el servicio <strong>→</strong></span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 1: REPARACIÓN (Video Izq, Texto Der) ================= -->
+  <section id="seccion-reparacion" class="gap-seccion">
+    <div class="seccion service-section-light">
+      <div class="mockup">
+        <div class="pantalla">
+          <video src="./assets/croaciavideofondo.mp4" autoplay muted loop playsinline></video>
+        </div>
+        <img src="./assets/png compu.png" alt="Notebook demostrativa Reparación Croacia">
+      </div>
+
+      <div class="texto">
+        <span class="subtitulo-cinta" style="color: #c82424; font-weight: 700; font-size: 13px; letter-spacing: 2px;">SERVICIO TÉCNICO</span>
+        <h2>Reparación</h2>
+        <p>
+          Servicio de reparación especializado sobre cortinas ya instaladas. Contamos con móviles propios que recorren permanentemente Capital Federal y el Gran para solucionar cualquier inconveniente mecánico o estructural de manera eficiente.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 2: URGENCIA (Texto Izq, Video Der) ================= -->
+  <section id="seccion-urgencia" class="gap-seccion">
+    <div class="seccion service-section-light">
+      <!-- Texto primero para que se vea a la izquierda en PC -->
+      <div class="texto">
+        <span class="subtitulo-cinta" style="color: #c82424; font-weight: 700; font-size: 13px; letter-spacing: 2px;">SERVICIO 24/7</span>
+        <h2>Urgencia</h2>
+        <p>
+          Atención las 24 horas y los 365 días del año en forma ininterrumpida. Garantizamos apertura y cierre de establecimientos con asistencia rápida en Capital Federal y Gran Buenos Aires.
+        </p>
+      </div>
+
+      <div class="mockup">
+        <div class="pantalla">
+          <video src="./assets/croaciavideofondo.mp4" autoplay muted loop playsinline></video>
+        </div>
+        <img src="./assets/png compu.png" alt="Notebook demostrativa Urgencia Croacia">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 3: FABRICACIÓN (Video Izq, Texto Der) ================= -->
+  <section id="seccion-fabricacion" class="gap-seccion">
+    <div class="seccion service-section-light">
+      <div class="mockup">
+        <div class="pantalla">
+          <video src="./assets/croaciavideofondo.mp4" autoplay muted loop playsinline></video>
+        </div>
+        <img src="./assets/png compu.png" alt="Notebook demostrativa Fabricación Croacia">
+      </div>
+
+      <div class="texto">
+        <span class="subtitulo-cinta" style="color: #c82424; font-weight: 700; font-size: 13px; letter-spacing: 2px;">PRODUCCIÓN PROPIA</span>
+        <h2>Fabricación</h2>
+        <p>
+          Contamos con compactadoras propias que nos permiten entregar los elementos al instante, fabricando cortinas a medida bajo rigurosos estándares de calidad y con tiempos de respuesta inigualables.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BANNER TRABAJOS ================= -->
+  <section class="gap-seccion">
+    <div class="banner-trabajos">
+      <div class="banner-info">
+        <h2>Especialistas en soluciones industriales y comerciales</h2>
+        <p>Conocé las obras e instalaciones que realizamos en todo el país.</p>
+      </div>
+      <a href="./trabajos.html" class="btn-trabajos">VER NUESTROS TRABAJOS ❯</a>
+    </div>
+  </section>
+
+  <!-- ================= WHATSAPP FLOTANTE ================= -->
+  <div class="whatsapp-float" id="waToggle">
+    <img src="./assets/whatsapp.svg" alt="WhatsApp Contacto">
+  </div>
+
+  <div class="whatsapp-panel" id="waPanel">
+    <div class="wa-header">
+      <span>WhatsApp</span>
+      <button id="waClose" aria-label="Cerrar chat">✕</button>
+    </div>
+
+    <div class="wa-body">
+      <div class="wa-message">
+        Hola! Gracias por visitarnos 😊<br>
+        ¿Cómo podemos ayudarte?
+      </div>
+
+      <a href="https://wa.me/5491156594671" target="_blank" rel="noopener" class="wa-open-chat" id="waOpenChat">
+        <svg class="wa-progress" viewBox="0 0 36 36">
+          <circle class="bg" cx="18" cy="18" r="16"></circle>
+          <circle class="fg" cx="18" cy="18" r="16"></circle>
+        </svg>
+        <span class="wa-text">Abrir chat</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <a href="#cotizadorModal" class="btn-cotizador">
+          <img src="./assets/calculadora.svg" alt="Cotizador Icono">
+          Cotizador online
+        </a>
+      </div>
+
+      <div class="footer-center">
+        <div class="footer-sucursal">
+          <span class="footer-social"><img src="./assets/ubicacion-footer.svg" alt="Ubicación Fábrica"></span>
+          <div>
+            <h4>FÁBRICA</h4>
+            <p>
+              Ruta de la Tradición 670<br>
+              esq. Bruzzone, Luis Guillón
+            </p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Croacia+SRL" target="_blank" rel="noopener" class="btn-maps">
+              📍 Cómo llegar
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-sucursal">
+          <span class="footer-social"><img src="./assets/ubicacion-footer.svg" alt="Ubicación La Plata"></span>
+          <div>
+            <h4>SUCURSAL LA PLATA</h4>
+            <p>Av. 44 N° 3269, esq. 160 bis, La Plata</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Av+44+3269+La+Plata" target="_blank" rel="noopener" class="btn-maps">
+              📍 Cómo llegar
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <div class="footer-contacto">
+          <h4>Teléfono</h4>
+          <p>4281-3813</p>
+        </div>
+
+        <div class="footer-contacto">
+          <h4>WhatsApp</h4>
+          <a href="https://wa.me/5491154502050" target="_blank" rel="noopener">
+            <span class="area">Fábrica</span> 11 5450-2050
+          </a>
+          <a href="https://wa.me/5491158184428" target="_blank" rel="noopener">
+            <span class="area">Suc. Lomas de Zamora</span> 11 5818-4428
+          </a>
+          <a href="https://wa.me/2213631000" target="_blank" rel="noopener">
+            <span class="area">Suc. La Plata</span> 221-3631000
+          </a>
+        </div>
+
+        <div class="footer-mail">
+          <span class="footer-social"><img src="./assets/email.svg" alt="Email contacto"></span>
+          <div class="footer-mail-list">
+            <a href="mailto:ruth@croaciacortinas.com.ar">ruth@croaciacortinas.com.ar</a>
+            <a href="mailto:marianna@croaciacortinas.com.ar">marianna@croaciacortinas.com.ar</a>
+            <a href="mailto:milagros@croaciacortinas.com.ar">milagros@croaciacortinas.com.ar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-line"></div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/croaciacortinas" target="_blank" rel="noopener"><img src="./assets/instagram-footer.svg" alt="Instagram"></a>
+        <a href="https://www.youtube.com/@CroaciaCortinasSRL" target="_blank" rel="noopener"><img src="./assets/youtube-footer.svg" alt="YouTube"></a>
+        <a href="https://www.facebook.com/CortinasMetalicasCroacia" target="_blank" rel="noopener"><img src="./assets/facebook-footer.svg" alt="Facebook"></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="empresa.js"></script>
+  <script src="cotizador.js"></script>
+  <script src="reels.js"></script>
+
+</body>
+</html>

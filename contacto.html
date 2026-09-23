@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+
+  <!-- SEO Principal -->
+  <title>Contacto | Croacia Cortinas Metálicas</title>
+  <meta name="description" content="Contactá a Croacia Cortinas Metálicas. Atención comercial en Luis Guillón, Lomas de Zamora y La Plata. Solicitá tu presupuesto o asesoramiento por WhatsApp.">
+  <meta name="keywords" content="contacto cortinas metalicas, fabrica cortinas metalicas luis guillon, asesoramiento portones enrollables, telefono croacia cortinas">
+  <meta name="language" content="Spanish">
+  <meta name="geo.region" content="AR">
+  <link rel="canonical" href="https://croaciacortinas.com.ar/contacto.html">
+
+  <!-- Open Graph / Redes Sociales & WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contacto y Atención Comercial | Croacia Cortinas Metálicas">
+  <meta property="og:description" content="Envíanos tu consulta o cotización por WhatsApp. Atención personalizada para cortinas metálicas y portones.">
+  <meta property="og:url" content="https://croaciacortinas.com.ar/contacto.html">
+  <meta property="og:image" content="https://croaciacortinas.com.ar/assets/Croacia_Logo_Negro.png">
+  <meta property="og:site_name" content="Croacia Cortinas Metálicas">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contacto y Atención Comercial | Croacia Cortinas Metálicas">
+  <meta name="twitter:description" content="Envíanos tu consulta o cotización por WhatsApp. Asesoramiento en cortinas y portones enrollables.">
+  <meta name="twitter:image" content="https://croaciacortinas.com.ar/assets/Croacia_Logo_Negro.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/favicon.png" sizes="32x32" type="image/png">
+
+  <!-- CSS Externos -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+  <!-- CSS Propios -->
+  <link rel="stylesheet" href="contacto.css">
+  <link rel="stylesheet" href="cotizador.css">
+  <link rel="stylesheet" href="theme.css">
+
+  <!-- Datos Estructurados (Schema.org / JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Croacia Cortinas Metálicas",
+    "image": "./assets/Croacia_Logo_Negro.png",
+    "telephone": "+541142813813",
+    "email": "ruth@croaciacortinas.com.ar",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Ruta de la Tradición 670 esq. Bruzzone",
+      "addressLocality": "Luis Guillón",
+      "addressRegion": "Buenos Aires",
+      "addressCountry": "AR"
+    },
+    "subOrganization": [
+      {
+        "@type": "LocalBusiness",
+        "name": "Croacia Cortinas Metálicas - Sucursal La Plata",
+        "telephone": "+542213631000",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. 44 N° 3269, esq. 160",
+          "addressLocality": "La Plata",
+          "addressRegion": "Buenos Aires",
+          "addressCountry": "AR"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- ================= HEADER / HERO ================= -->
+  <header class="fondo-header" id="inicio">
+    <nav class="nav-header" id="navHeader">
+      <div class="nav">
+        <div class="logo">
+          <a href="./index.html">
+            <img src="./assets/Croacia_Logo_Negro.png" alt="Croacia SRL - Cortinas Metálicas y Portones">
+          </a>
+        </div>
+
+        <div class="menu-hamburguesa" id="btnMenu" aria-label="Abrir menú de navegación">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="nav-links">
+          <a href="./index.html"><strong>INICIO</strong></a>
+          <a href="./empresa.html"><strong>EMPRESA</strong></a>
+          <a href="./index.html#cortinas"><strong>CORTINAS</strong></a>
+          <a href="./portones.html"><strong>PORTONES</strong></a>
+          <a href="./trabajos.html"><strong>TRABAJOS</strong></a>
+          <a href="./contacto.html"class="nav-active"><strong>CONTACTO</strong></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero-content hero-contacto">
+      <h1>Contacto</h1>
+      <p>Dejanos tu consulta o contactate con nuestro equipo</p>
+
+    </div>
+  </header>
+
+  <!-- OVERLAY Y MENÚ MOBILE -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <aside class="menu-lateral" id="menuLateral">
+    <nav>
+      <ul>
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="./empresa.html">Empresa</a></li>
+        <li><a href="./index.html#cortinas">Cortinas</a></li>
+        <li><a href="./portones.html">Portones</a></li>
+        <li><a href="./trabajos.html">Trabajos</a></li>
+        <li><a href="./contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- ================= MODAL COTIZADOR ================= -->
+  <div class="cotizador-overlay" id="cotizadorOverlay"></div>
+
+  <div class="cotizador-modal" id="cotizadorModal">
+    <button class="cotizador-close" id="cotizadorClose" aria-label="Cerrar modal">✕</button>
+
+    <h2 class="cotizador-title">
+      COTIZÁ ONLINE<br>
+      <span>EN 3 PASOS</span>
+    </h2>
+
+    <div class="steps-indicator">
+      <div class="step active" data-step="1">
+        <span>1</span>
+        <p>MODELO</p>
+      </div>
+      <div class="line"></div>
+      <div class="step" data-step="2">
+        <span>2</span>
+        <p>CARACTERÍSTICAS</p>
+      </div>
+      <div class="line"></div>
+      <div class="step" data-step="3">
+        <span>3</span>
+        <p>DATOS</p>
+      </div>
+    </div>
+
+    <!-- PASO 1 -->
+    <div id="paso1">
+      <p class="cotizador-label">¿QUÉ MODELO BUSCÁS?</p>
+      <div class="cotizador-radios">
+        <label>
+          <input type="radio" name="modelo" value="cortina" checked>
+          Cortina Metálica
+        </label>
+        <label>
+          <input type="radio" name="modelo" value="porton">
+          Portón Poliuretano
+        </label>
+      </div>
+
+      <p class="cotizador-label">¿QUÉ MEDIDAS? <span>(libre de paso, en metros)</span></p>
+
+      <div id="cortinasContainer">
+        <div class="cortina-item">
+          <p class="cortina-title">Cortina 1</p>
+
+          <div class="medidas">
+            <input type="number" placeholder="Ancho">
+            <input type="number" placeholder="Alto">
+          </div>
+
+          <label class="add-cortina">
+            <input type="checkbox">
+            <span class="texto-agregar">Agregar cortina</span>
+          </label>
+        </div>
+      </div>
+
+      <button id="irPaso2" class="cotizador-next">
+        PASO 2 ❯❯❯
+      </button>
+    </div>
+
+    <!-- PASO 2 -->
+    <div id="paso2" style="display:none;">
+      <h3 class="paso-titulo">CARACTERÍSTICAS</h3>
+
+      <div id="selectorCortina"></div>
+      <div id="contadorConfig" class="contador-config">0/0 configuradas</div>
+
+      <div class="grupo" id="grupoChapa">
+        <p class="grupo-titulo">TIPO DE CHAPA</p>
+        <label><input type="radio" name="chapa" value="Ciega"> Ciega</label>
+        <label><input type="radio" name="chapa" value="Microperforada"> Microperforada</label>
+        <label><input type="radio" name="chapa" value="Americana"> Americana</label>
+      </div>
+
+      <div class="grid-config">
+        <div class="grupo" id="grupoLama" style="display:none;">
+          <p class="grupo-titulo">TIPO DE LAMA</p>
+          <label><input type="radio" name="lama" value="45 mm">45 mm</label>
+          <label><input type="radio" name="lama" value="77 mm">77 mm</label>
+          <label><input type="radio" name="lama" value="95 mm">95 mm</label>
+          <label><input type="radio" name="lama" value="125 mm">125 mm</label>
+        </div>
+
+        <div class="grupo" id="grupoMecanismo">
+          <p class="grupo-titulo">MECANISMO</p>
+          <label id="lblManual">
+            <input type="radio" name="mecanismo" value="Manual"> Manual
+          </label>
+          <label id="lblAutomatizado">
+            <input type="radio" name="mecanismo" value="Automatizado"> Automatizado
+          </label>
+        </div>
+      </div>
+
+      <div id="grupoOpcionales" style="display:none;">
+        <label>
+          ⚠️ Los Portones Poliuretano vienen por KIT COMPLETO que incluye:
+          Motor paralelo o tubular + Central transmisora con 2 controles remotos
+        </label>
+      </div>
+
+      <div class="grupo doble">
+        <div id="colControl">
+          <p>Control Remoto adicional</p>
+          <label><input type="radio" name="control" value="Sí"> Sí</label>
+          <label><input type="radio" name="control" value="No" checked> No</label>
+        </div>
+
+        <div id="colEscape">
+          <p>Puerta de Escape</p>
+          <label><input type="radio" name="escape" value="Sí"> Sí</label>
+          <label><input type="radio" name="escape" value="No" checked> No</label>
+        </div>
+      </div>
+
+      <div class="botones-paso">
+        <button id="volverPaso1" class="btn-atras">ATRÁS</button>
+        <button id="irPaso3" class="btn-siguiente">PASO 3 ❯❯❯</button>
+      </div>
+    </div>
+
+    <!-- PASO 3 -->
+    <div id="paso3" style="display:none;">
+      <h3 class="paso-titulo">COMPLETÁ TUS DATOS</h3>
+
+      <p class="mensaje-respuesta">
+        Al enviar la solicitud, nuestro equipo te responderá a la brevedad por WhatsApp.
+      </p>
+
+      <div class="formulario">
+        <div class="fila">
+          <input type="text" id="nombre" placeholder="Nombre">
+          <input type="tel" id="telefono" placeholder="Teléfono">
+        </div>
+
+        <input type="email" id="email" placeholder="Email">
+        <input type="text" id="zona" placeholder="Zona">
+        <textarea id="aclaracion" placeholder="¿Alguna aclaración?"></textarea>
+      </div>
+
+      <div class="botones-paso">
+        <button id="volverPaso2" class="btn-atras">ATRÁS</button>
+        <button id="cotizarBtn" class="btn-siguiente">COTIZAR ✓</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SECCIÓN DE CONTACTO ================= -->
+  <section class="contacto-section" id="form-contacto">
+    <div class="contacto-wrapper">
+
+      <!-- COLUMNA IZQUIERDA: CARDS DE CONTACTO -->
+      <div class="contacto-cards">
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/croaciacortinas" target="_blank" rel="noopener" class="card-contacto">
+          <div class="icono">
+            <img src="./assets/instagram-color.svg" alt="Instagram Croacia Cortinas Metálicas">
+          </div>
+          <div class="texto">
+            <span>Instagram</span>
+            <strong>@croaciacortinas</strong>
+          </div>
+        </a>
+
+        <!-- Dirección -->
+        <a href="https://maps.app.goo.gl/5qdySgLYSzQGfqZm6" target="_blank" rel="noopener" class="card-contacto">
+          <div class="icono">
+            <img src="./assets/ubicacion-color.svg" alt="Ubicación Fábrica Luis Guillón">
+          </div>
+          <div class="texto">
+            <span>Dirección</span>
+            <strong>Ruta de la Tradición 670</strong>
+          </div>
+        </a>
+
+        <!-- WhatsApp Fábrica -->
+        <a href="https://wa.me/5491154502050" target="_blank" rel="noopener" class="card-contacto">
+          <div class="icono">
+            <img src="./assets/whatsapp.svg" alt="WhatsApp Fábrica Croacia">
+          </div>
+          <div class="texto">
+            <span>WhatsApp Fábrica</span>
+            <strong>11 5450-2050</strong>
+          </div>
+        </a>
+
+        <!-- WhatsApp Lomas -->
+        <a href="https://wa.me/5491158184428" target="_blank" rel="noopener" class="card-contacto">
+          <div class="icono">
+            <img src="./assets/whatsapp.svg" alt="WhatsApp Sucursal Lomas de Zamora">
+          </div>
+          <div class="texto">
+            <span>Suc. Lomas de Zamora</span>
+            <strong>11 5818-4428</strong>
+          </div>
+        </a>
+
+        <!-- WhatsApp La Plata -->
+        <a href="https://wa.me/2213631000" target="_blank" rel="noopener" class="card-contacto">
+          <div class="icono">
+            <img src="./assets/whatsapp.svg" alt="WhatsApp Sucursal La Plata">
+          </div>
+          <div class="texto">
+            <span>Suc. La Plata</span>
+            <strong>221-3631000</strong>
+          </div>
+        </a>
+      </div>
+
+      <!-- COLUMNA DERECHA: FORMULARIO -->
+      <form class="formulario-contacto" id="contactForm">
+        <h2>Dejanos tu consulta</h2>
+
+        <div class="info-whatsapp">
+          <img src="./assets/whatsapp.svg" alt="WhatsApp Icono">
+          <p>
+            Al enviar tu consulta se abrirá WhatsApp y nuestro equipo te responderá lo más rápido posible.
+          </p>
+        </div>
+
+        <label for="inputNombre">Nombre
+          <input type="text" id="inputNombre" name="nombre" required>
+        </label>
+
+        <label for="inputEmail">Email
+          <input type="email" id="inputEmail" name="email" required>
+        </label>
+
+        <label for="inputTelefono">Teléfono
+          <input type="tel" id="inputTelefono" name="telefono" pattern="[0-9+ ]{8,20}" required>
+        </label>
+
+        <label for="inputConsulta">Consulta
+          <input type="text" id="inputConsulta" name="consulta">
+        </label>
+
+        <label for="inputMensaje">Mensaje
+          <textarea id="inputMensaje" name="mensaje" required></textarea>
+        </label>
+
+        <button type="submit" id="submitBtn" class="btn-whatsapp-enviar">
+          <span class="btn-content">
+            <img src="./assets/whatsapp.svg" alt="WhatsApp Icono">
+            Enviar por WhatsApp
+          </span>
+
+          <span class="btn-loading">
+            <span class="loader"></span>
+            Abriendo WhatsApp...
+          </span>
+        </button>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ================= WHATSAPP FLOTANTE ================= -->
+  <div class="whatsapp-float" id="waToggle">
+    <img src="./assets/whatsapp.svg" alt="Contacto WhatsApp Croacia">
+  </div>
+
+  <div class="whatsapp-panel" id="waPanel">
+    <div class="wa-header">
+      <span>WhatsApp</span>
+      <button id="waClose" aria-label="Cerrar chat">✕</button>
+    </div>
+
+    <div class="wa-body">
+      <div class="wa-message">
+        Hola! Gracias por visitarnos 😊<br>
+        ¿Cómo podemos ayudarte?
+      </div>
+
+      <a href="https://wa.me/5491156594671" target="_blank" rel="noopener" class="wa-open-chat" id="waOpenChat">
+        <span class="wa-text">Abrir chat</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <a href="#" class="btn-cotizador">
+          <img src="./assets/calculadora.svg" alt="Cotizador Icono">
+          Cotizador online
+        </a>
+      </div>
+
+      <div class="footer-center">
+        <div class="footer-sucursal">
+          <span class="footer-social"><img src="./assets/ubicacion-footer.svg" alt="Ubicación Fábrica"></span>
+          <div>
+            <h4>FÁBRICA</h4>
+            <p>
+              Ruta de la Tradición 670<br>
+              esq. Bruzzone, Luis Guillón
+            </p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Croacia+SRL" target="_blank" rel="noopener" class="btn-maps">
+              📍 Cómo llegar
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-sucursal">
+          <span class="footer-social"><img src="./assets/ubicacion-footer.svg" alt="Ubicación Sucursal La Plata"></span>
+          <div>
+            <h4>SUCURSAL LA PLATA</h4>
+            <p>Av. 44 N° 3269, esq. 160 bis, La Plata</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Av+44+3269+La+Plata" target="_blank" rel="noopener" class="btn-maps">
+              📍 Cómo llegar
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <div class="footer-contacto">
+          <h4>Teléfono</h4>
+          <p>4281-3813</p>
+        </div>
+
+        <div class="footer-contacto">
+          <h4>WhatsApp</h4>
+          <a href="https://wa.me/5491154502050" target="_blank" rel="noopener">
+            <span class="area">Fábrica</span> 11 5450-2050
+          </a>
+          <a href="https://wa.me/5491158184428" target="_blank" rel="noopener">
+            <span class="area">Suc. Lomas de Zamora</span> 11 5818-4428
+          </a>
+          <a href="https://wa.me/2213631000" target="_blank" rel="noopener">
+            <span class="area">Suc. La Plata</span> 221-3631000
+          </a>
+        </div>
+
+        <div class="footer-mail">
+          <span class="footer-social"><img src="./assets/email.svg" alt="Email contacto"></span>
+          <div class="footer-mail-list">
+            <a href="mailto:ruth@croaciacortinas.com.ar">ruth@croaciacortinas.com.ar</a>
+            <a href="mailto:marianna@croaciacortinas.com.ar">marianna@croaciacortinas.com.ar</a>
+            <a href="mailto:milagros@croaciacortinas.com.ar">milagros@croaciacortinas.com.ar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-line"></div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/croaciacortinas" target="_blank" rel="noopener"><img src="./assets/instagram-footer.svg" alt="Instagram Croacia Cortinas"></a>
+        <a href="https://www.youtube.com/@CroaciaCortinasSRL" target="_blank" rel="noopener"><img src="./assets/youtube-footer.svg" alt="YouTube Croacia Cortinas"></a>
+        <a href="https://www.facebook.com/CortinasMetalicasCroacia" target="_blank" rel="noopener"><img src="./assets/facebook-footer.svg" alt="Facebook Croacia Cortinas"></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="main.js"></script>
+  <script src="cotizador.js"></script>
+</body>
+
+</html>

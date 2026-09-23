@@ -1,0 +1,67 @@
+.reel-clickable {
+    cursor: pointer;
+}
+
+.reel-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 30000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.86);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.reel-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.reel-modal {
+    position: relative;
+    width: min(90vw, 760px);
+    max-height: 92vh;
+}
+
+.reel-modal-player {
+    display: block;
+    width: 100%;
+    max-height: 92vh;
+    border-radius: 14px;
+    background: #000;
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.5);
+}
+
+.reel-modal-close {
+    position: absolute;
+    top: -44px;
+    right: 0;
+    z-index: 1;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 50%;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .reel-modal-overlay {
+        padding: 16px;
+    }
+
+    .reel-modal {
+        width: min(92vw, 520px);
+    }
+
+    .reel-modal-close {
+        top: -42px;
+    }
+}
